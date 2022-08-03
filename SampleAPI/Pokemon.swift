@@ -16,7 +16,7 @@ struct Pokemon: Codable {
 struct Image: Codable {
     let frontImage: String
 
-    enum codingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case frontImage = "front_default"
     }
 }
