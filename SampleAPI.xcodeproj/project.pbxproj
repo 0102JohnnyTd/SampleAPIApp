@@ -15,6 +15,7 @@
 		1C3B3D0B28991FBA00719086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3B3D0928991FBA00719086 /* LaunchScreen.storyboard */; };
 		1C3B3D132899688300719086 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B3D122899688300719086 /* Pokemon.swift */; };
 		1C3B3D15289969AB00719086 /* PokemonJaName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B3D14289969AB00719086 /* PokemonJaName.swift */; };
+		1C3B3D18289B52ED00719086 /* FetchAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B3D17289B52ED00719086 /* FetchAPIs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1C3B3D0C28991FBA00719086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C3B3D122899688300719086 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		1C3B3D14289969AB00719086 /* PokemonJaName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonJaName.swift; sourceTree = "<group>"; };
+		1C3B3D17289B52ED00719086 /* FetchAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAPIs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1C3B3D0028991FB800719086 /* SceneDelegate.swift */,
 				1C3B3D122899688300719086 /* Pokemon.swift */,
 				1C3B3D14289969AB00719086 /* PokemonJaName.swift */,
+				1C3B3D17289B52ED00719086 /* FetchAPIs.swift */,
 				1C3B3D0228991FB800719086 /* ViewController.swift */,
 				1C3B3D0428991FB800719086 /* Main.storyboard */,
 				1C3B3D0728991FBA00719086 /* Assets.xcassets */,
@@ -168,6 +171,7 @@
 				1C3B3D0328991FB800719086 /* ViewController.swift in Sources */,
 				1C3B3D15289969AB00719086 /* PokemonJaName.swift in Sources */,
 				1C3B3D132899688300719086 /* Pokemon.swift in Sources */,
+				1C3B3D18289B52ED00719086 /* FetchAPIs.swift in Sources */,
 				1C3B3CFF28991FB800719086 /* AppDelegate.swift in Sources */,
 				1C3B3D0128991FB800719086 /* SceneDelegate.swift in Sources */,
 			);
