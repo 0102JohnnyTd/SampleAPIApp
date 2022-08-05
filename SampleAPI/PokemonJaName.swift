@@ -8,8 +8,8 @@
 import Foundation
 
 struct PokemonJaName: Codable {
-    let names:[Name]
-    let ids:[PokeDex]
+    let names: [Name]
+    let ids: [PokeDex]
 
     enum CodingKeys: String, CodingKey {
         case names
