@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class PokemonListTableViewCell: UITableViewCell {
     @IBOutlet private weak var imageIcon: UIImageView!
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var enNameLabel: UILabel!
     @IBOutlet private weak var jaNameLabel: UILabel!
-
-    func configure(id: String, enName: String, jaName: String) {
+    
+    func configure(imageURL: URL, id: String, enName: String, jaName: String) {
+        imageIcon.kf.setImage(with: imageURL)
         idLabel.text = id
         enNameLabel.text = enName
         jaNameLabel.text = jaName
