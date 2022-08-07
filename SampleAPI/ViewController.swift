@@ -14,11 +14,13 @@ final class ViewController: UIViewController {
 
     private var dataArray: [Pokemon] = []
     private var jaNameDataArray: [PokemonJaName] = []
+    private var fileteredJaNameDataArray: [PokemonJaName] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startIndicator()
         setUpTableViewCell()
+        setUpSearchBar()
         fetchData()
     }
 
@@ -28,10 +30,16 @@ final class ViewController: UIViewController {
         pokemonListTableView.register(PokemonListTableViewCell.nib, forCellReuseIdentifier: PokemonListTableViewCell.identifier)
     }
 
+    private func setUpSearchBar() {
+        searchBar.delegate = self
+        searchBar.placeholder = "ポケモンのおなまえをけんさく"
+    }
+
     private func fetchData() {
         FetchAPIs.decodePokemonNameData { [self] in
             jaNameDataArray = $0
             jaNameDataArray.sort { $0.ids[0].id < $1.ids[0].id }
+            fileteredJaNameDataArray = jaNameDataArray
         }
 
         FetchAPIs.decodePokemonData { [self] in
@@ -63,14 +71,33 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        jaNameDataArray.count
+        fileteredJaNameDataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = pokemonListTableView.dequeueReusableCell(withIdentifier: PokemonListTableViewCell.identifier, for: indexPath) as! PokemonListTableViewCell
 
-        cell.configure(imageURL: URL(string: dataArray[indexPath.row].sprites.frontImage)!, id: "\(dataArray[indexPath.row].id)", enName: dataArray[indexPath.row].name, jaName: jaNameDataArray[indexPath.row].names[0].name)
+        let pokeDexID = fileteredJaNameDataArray[indexPath.row].ids[0].id - 1
+
+        cell.configure(imageURL: URL(string: dataArray[pokeDexID].sprites.frontImage)!, id: "\(dataArray[pokeDexID].id)", enName: dataArray[pokeDexID].name, jaName: fileteredJaNameDataArray[indexPath.row].names[0].name)
 
         return cell
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        fileteredJaNameDataArray = []
+
+        if searchText.isEmpty {
+            fileteredJaNameDataArray = jaNameDataArray
+        } else {
+            jaNameDataArray.forEach {
+                if $0.names[0].name.contains(searchText) {
+                    fileteredJaNameDataArray.append($0)
+                }
+            }
+        }
+        pokemonListTableView.reloadData()
     }
 }
