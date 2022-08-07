@@ -17,9 +17,9 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startIndicator()
         setUpTableViewCell()
         fetchData()
-        fetchJaNameData()
     }
 
     private func setUpTableViewCell() {
@@ -29,21 +29,30 @@ final class ViewController: UIViewController {
     }
 
     private func fetchData() {
+        FetchAPIs.decodePokemonNameData { [self] in
+            jaNameDataArray = $0
+        }
+
         FetchAPIs.decodePokemonData { [self] in
             dataArray = $0
             DispatchQueue.main.async { [self] in
                 self.pokemonListTableView.reloadData()
+                stopIndicator()
             }
         }
     }
 
-    private func fetchJaNameData() {
-        FetchAPIs.decodePokemonNameData { [self] in
-            jaNameDataArray = $0
-            DispatchQueue.main.async { [self] in
-                pokemonListTableView.reloadData()
-            }
-        }
+
+    private func startIndicator() {
+        indicator.isHidden = false
+        indicator.startAnimating()
+        view.alpha = 0.5
+    }
+
+    private func stopIndicator() {
+        indicator.stopAnimating()
+        indicator.isHidden = true
+        view.alpha = 1
     }
 }
 
