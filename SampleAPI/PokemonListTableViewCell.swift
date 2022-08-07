@@ -13,6 +13,9 @@ final class PokemonListTableViewCell: UITableViewCell {
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var enNameLabel: UILabel!
     @IBOutlet private weak var jaNameLabel: UILabel!
+
+    static let nib = UINib(nibName: String(describing: PokemonListTableViewCell.self), bundle: nil)
+    static let identifier = String(describing: PokemonListTableViewCell.self)
     
     func configure(imageURL: URL, id: String, enName: String, jaName: String) {
         imageIcon.kf.setImage(with: imageURL)
