@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PokemonListTableViewCell" customModule="SampleAPI" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -56,6 +56,12 @@
                 <constraint firstItem="SZu-Au-a0m" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="zIr-C3-pfE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="enNameLabel" destination="oj8-gu-0Ni" id="UIZ-6t-zYw"/>
+                <outlet property="idLabel" destination="P09-ib-XVt" id="j6G-Uq-mgk"/>
+                <outlet property="imageIcon" destination="oWE-dk-0pd" id="lAm-ns-wkt"/>
+                <outlet property="jaNameLabel" destination="kfe-Gk-HKM" id="jjq-cy-rzU"/>
+            </connections>
             <point key="canvasLocation" x="132" y="87"/>
         </view>
     </objects>
