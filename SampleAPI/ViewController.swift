@@ -31,17 +31,18 @@ final class ViewController: UIViewController {
     private func fetchData() {
         FetchAPIs.decodePokemonNameData { [self] in
             jaNameDataArray = $0
+            jaNameDataArray.sort { $0.ids[0].id < $1.ids[0].id }
         }
 
         FetchAPIs.decodePokemonData { [self] in
             dataArray = $0
+            dataArray.sort { $0.id < $1.id }
             DispatchQueue.main.async { [self] in
                 self.pokemonListTableView.reloadData()
                 stopIndicator()
             }
         }
     }
-
 
     private func startIndicator() {
         indicator.isHidden = false
