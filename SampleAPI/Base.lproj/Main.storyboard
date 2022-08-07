@@ -45,6 +45,11 @@
                             <constraint firstItem="DFz-XX-GQz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zbF-Vs-dka"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicator" destination="gvd-rH-yS5" id="T8Q-U8-fpX"/>
+                        <outlet property="pokemonListTableView" destination="FSj-CR-47q" id="l9t-dv-Uv7"/>
+                        <outlet property="searchBar" destination="d1f-hv-gtB" id="2YT-Er-yCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var pokemonListTableView: UITableView!
+    @IBOutlet private weak var indicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
