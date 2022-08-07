@@ -80,7 +80,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let pokeDexID = fileteredJaNameDataArray[indexPath.row].ids[0].id - 1
 
         cell.configure(imageURL: URL(string: dataArray[pokeDexID].sprites.frontImage)!, id: "\(dataArray[pokeDexID].id)", enName: dataArray[pokeDexID].name, jaName: fileteredJaNameDataArray[indexPath.row].names[0].name)
-
         return cell
     }
 }
@@ -93,7 +92,7 @@ extension ViewController: UISearchBarDelegate {
             fileteredJaNameDataArray = jaNameDataArray
         } else {
             jaNameDataArray.forEach {
-                if $0.names[0].name.contains(searchText) {
+                if $0.names[0].name.contains(searchText.hiraganaToKatakana()) {
                     fileteredJaNameDataArray.append($0)
                 }
             }
