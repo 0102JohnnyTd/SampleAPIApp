@@ -23,8 +23,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h4T-iH-vth">
+                                        <rect key="frame" x="0.0" y="51" width="414" height="32"/>
+                                        <segments>
+                                            <segment title="PokeDex"/>
+                                            <segment title="Favorite"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="Z2b-UX-ad6"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FSj-CR-47q">
-                                        <rect key="frame" x="0.0" y="51" width="414" height="767"/>
+                                        <rect key="frame" x="0.0" y="82" width="414" height="736"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -49,6 +59,7 @@
                         <outlet property="indicator" destination="gvd-rH-yS5" id="T8Q-U8-fpX"/>
                         <outlet property="pokemonListTableView" destination="FSj-CR-47q" id="l9t-dv-Uv7"/>
                         <outlet property="searchBar" destination="d1f-hv-gtB" id="2YT-Er-yCf"/>
+                        <outlet property="segmentedControl" destination="h4T-iH-vth" id="EUc-CE-17R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

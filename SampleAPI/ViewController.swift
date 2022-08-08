@@ -9,12 +9,30 @@ import UIKit
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
+
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
+
     @IBOutlet private weak var pokemonListTableView: UITableView!
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
+
+    @IBAction private func segmentedControl(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            fileteredJaNameDataArray = nameDataArrayManager
+            pokemonListTableView.reloadData()
+        case 1:
+            nameDataArrayManager = fileteredJaNameDataArray
+            fileteredJaNameDataArray = favoriteJaNameDataArray
+            pokemonListTableView.reloadData()
+        default: break
+        }
+    }
 
     private var dataArray: [Pokemon] = []
     private var jaNameDataArray: [PokemonJaName] = []
     private var fileteredJaNameDataArray: [PokemonJaName] = []
+    private var nameDataArrayManager: [PokemonJaName] = []
+    private var favoriteJaNameDataArray: [PokemonJaName] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +71,6 @@ final class ViewController: UIViewController {
     }
 
     private func startIndicator() {
-        indicator.isHidden = false
         indicator.startAnimating()
         view.alpha = 0.5
     }
