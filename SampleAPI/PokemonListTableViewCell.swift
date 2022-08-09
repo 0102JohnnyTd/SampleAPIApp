@@ -11,7 +11,7 @@ import Kingfisher
 final class PokemonListTableViewCell: UITableViewCell {
     @IBOutlet private weak var imageIcon: UIImageView!
     @IBOutlet private weak var idLabel: UILabel!
-    @IBOutlet private weak var addFavoriteButton: UIButton!
+    @IBOutlet weak var addFavoriteButton: UIButton!
     @IBOutlet private weak var enNameLabel: UILabel!
     @IBOutlet private weak var jaNameLabel: UILabel!
 

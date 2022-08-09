@@ -33,7 +33,9 @@ final class ViewController: UIViewController {
     private var fileteredJaNameDataArray: [PokemonJaName] = []
     private var nameDataArrayManager: [PokemonJaName] = []
     private var favoriteJaNameDataArray: [PokemonJaName] = []
-    
+
+    private var isFavorite = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         startIndicator()
@@ -83,6 +85,12 @@ final class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    @objc func addFavoriteList(sender: UIButton) {
+        isFavorite.toggle()
+        sender.tintColor = isFavorite ? .systemYellow : .systemGray4
+        pokemonListTableView.reloadData()
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         150
     }
@@ -97,6 +105,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let pokeDexID = fileteredJaNameDataArray[indexPath.row].ids[0].id - 1
 
         cell.configure(imageURL: URL(string: dataArray[pokeDexID].sprites.frontImage)!, id: "\(dataArray[pokeDexID].id)", enName: dataArray[pokeDexID].name, jaName: fileteredJaNameDataArray[indexPath.row].names[0].name)
+
+//        cell.addFavoriteButton.tag = indexPath.row
+        cell.addFavoriteButton.addTarget(self, action: #selector(addFavoriteList(sender:)), for: .touchUpInside)
         return cell
     }
 }
