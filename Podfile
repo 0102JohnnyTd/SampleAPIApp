@@ -7,6 +7,7 @@ target 'SampleAPI' do
 
   # Pods for SampleAPI
   pod 'Kingfisher', '~> 7.0'
+  pod 'RealmSwift'
 
 
 end
