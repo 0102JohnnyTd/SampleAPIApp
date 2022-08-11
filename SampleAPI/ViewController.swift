@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -35,6 +36,8 @@ final class ViewController: UIViewController {
     private var favoriteJaNameDataArray: [PokemonJaName] = []
 
     private var isFavorite = false
+    private let realm = try! Realm()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
