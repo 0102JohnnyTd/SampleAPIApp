@@ -7,6 +7,7 @@
 
 import Foundation
 
+// ひらがな入力をカタカナ入力に変換
 extension String {
     func hiraganaToKatakana() -> String {
         self.transform(transform: .hiraganaToKatakana, reverse: false)

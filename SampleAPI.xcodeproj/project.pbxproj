@@ -79,20 +79,60 @@
 			children = (
 				1C3B3CFE28991FB800719086 /* AppDelegate.swift */,
 				1C3B3D0028991FB800719086 /* SceneDelegate.swift */,
-				1CB7A3F0289FC3BE008E1262 /* String+.swift */,
-				1C3B3D122899688300719086 /* Pokemon.swift */,
-				1C3B3D14289969AB00719086 /* PokemonJaName.swift */,
-				1C3B3D17289B52ED00719086 /* FetchAPIs.swift */,
-				1CB7A3EE289FA1C5008E1262 /* PokemonListTableViewCell.swift */,
-				1CB7A3EC289F9EFD008E1262 /* PokemonListTableViewCell.xib */,
-				1C3B3D0228991FB800719086 /* ViewController.swift */,
+				1CB0AE69291D0DC9003839E0 /* Extensions */,
+				1CB0AE68291D0DC1003839E0 /* Models */,
+				1CB0AE6A291D0ED0003839E0 /* Views */,
+				1CB0AE6C291D0FBE003839E0 /* Controllers */,
 				1CD3808528A5306D00B2AC80 /* Favorite.swift */,
-				1C3B3D0428991FB800719086 /* Main.storyboard */,
 				1C3B3D0728991FBA00719086 /* Assets.xcassets */,
 				1C3B3D0928991FBA00719086 /* LaunchScreen.storyboard */,
 				1C3B3D0C28991FBA00719086 /* Info.plist */,
 			);
 			path = SampleAPI;
+			sourceTree = "<group>";
+		};
+		1CB0AE68291D0DC1003839E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C3B3D122899688300719086 /* Pokemon.swift */,
+				1C3B3D14289969AB00719086 /* PokemonJaName.swift */,
+				1C3B3D17289B52ED00719086 /* FetchAPIs.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1CB0AE69291D0DC9003839E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1CB7A3F0289FC3BE008E1262 /* String+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1CB0AE6A291D0ED0003839E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1CB0AE6B291D0F83003839E0 /* Cells */,
+				1C3B3D0428991FB800719086 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1CB0AE6B291D0F83003839E0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1CB7A3EE289FA1C5008E1262 /* PokemonListTableViewCell.swift */,
+				1CB7A3EC289F9EFD008E1262 /* PokemonListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1CB0AE6C291D0FBE003839E0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C3B3D0228991FB800719086 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		34DAA69515B09845F84A232F /* Pods */ = {

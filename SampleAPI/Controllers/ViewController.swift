@@ -28,13 +28,13 @@ final class ViewController: UIViewController {
         default: break
         }
     }
-
+    
     private var dataArray: [Pokemon] = []
     private var jaNameDataArray: [PokemonJaName] = []
     private var fileteredJaNameDataArray: [PokemonJaName] = []
     private var nameDataArrayManager: [PokemonJaName] = []
     private var favoriteJaNameDataArray: [PokemonJaName] = []
-
+    
     private var isFavorite = false
     private let realm = try! Realm()
 
