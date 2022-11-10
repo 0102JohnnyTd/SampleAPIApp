@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-final class ViewController: UIViewController {
+final class PokemonListViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
 
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
@@ -87,7 +87,7 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func addFavoriteList(sender: UIButton) {
         isFavorite.toggle()
         sender.tintColor = isFavorite ? .systemYellow : .systemGray4
@@ -115,7 +115,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ViewController: UISearchBarDelegate {
+extension PokemonListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         fileteredJaNameDataArray = []
 
