@@ -15,3 +15,6 @@ disabled_rules:
   - cyclomatic_complexity
   - function_body_length
   - large_tuple
+  - force_try
+  - file_length
+  - type_body_length
