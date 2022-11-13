@@ -15,9 +15,11 @@ final class PokemonListTableViewCell: UITableViewCell {
     @IBOutlet private weak var enNameLabel: UILabel!
     @IBOutlet private weak var jaNameLabel: UILabel!
 
+    // CellをTableViewに登録する際に必要なIDを定義
     static let nib = UINib(nibName: String(describing: PokemonListTableViewCell.self), bundle: nil)
     static let identifier = String(describing: PokemonListTableViewCell.self)
-    
+
+    // Cell上のオブジェクトに取得したデータをセットする処理
     func configure(imageURL: URL, id: String, enName: String, jaName: String) {
         imageIcon.kf.setImage(with: imageURL)
         idLabel.text = id
